@@ -6,7 +6,6 @@
 const fs = require("fs");
 const path = require("path");
 import { ethers } from "hardhat";
-import { Campaign } from "../typechain";
 
 const CLIENT_PATH = path.join(__dirname, "..", "client", "src", "lib", "ether");
 
@@ -40,15 +39,6 @@ async function main() {
     `Test Campaign address: ${await campaignFactory.getDeployedCampaigns()}`
   );
   console.log(`Test Campaign Manager: ${deployer.address}`);
-
-  // const testCampaignData = {
-  //   address: testCampaign.address,
-  //   abi: JSON.parse(testCampaign.interface.format("json") as any),
-  // };
-  // fs.writeFileSync(
-  //   path.join(CLIENT_PATH, "TestCampaign.json"),
-  //   JSON.stringify(testCampaignData)
-  // );
 }
 
 main().catch((error) => {
