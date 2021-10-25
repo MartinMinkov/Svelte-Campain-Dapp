@@ -1,5 +1,6 @@
 <script>
 	import '../app.postcss';
+	import Header from '$components/Header.svelte';
 	import { ethers } from 'ethers';
 	import { onMount } from 'svelte';
 
@@ -35,12 +36,7 @@
 	}
 </script>
 
-<main>
+<main class="container mx-auto md:px-2 lg:px-4">
+	<Header />
 	<slot />
 </main>
-
-<style>
-	main {
-		@apply p-4;
-	}
-</style>
